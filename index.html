@@ -19,12 +19,31 @@
             <div class="container__informaciones">
                 <div class="container__texto">
                     <h1></h1>
-                    <p class="texto__parrafo"></p>
+                    <p class="texto__parrafo" id="p__seleccion"></p>
                 </div>
-                <input type="number" id="valorUsuario" min="1" max="10" class="container__input">
-                <div class="chute container__botones">
-                    <button onclick="verificarIntento();" class="container__boton">Intentar</button>
-                    <button onclick="reiniciarJuego();" class="container__boton" id="reiniciar" disabled>Nuevo juego</button>
+                <!-- Seleccion de cantidad de intentos máximos -->
+                <div class="seleccion_juego" id="menu__seleccion__juego">
+                    <label for="intentos__maximos" class="texto__label" id="intentos"></label>
+                    <select name="intentos" id="intentos__select" class="select__intentos">
+                        <option value="1">Imposible 1 intento</option>
+                        <option value="3">Dificil 3 intentos</option>
+                        <option value="5">Medio 5 intentos</option>
+                        <option value="10">Fácil 10 intentos</option>
+                    </select>
+                    <button onclick="agregarIntentos();" class="container__boton">Aceptar</button>
+                </div>
+                <!-- Seleccion de cantidad de numeros sorteados -->
+                 <div class="seleccion__cant__num">
+
+                 </div>
+                <!-- Juego empezado -->
+                <div class="container__menu" id="menu__juego" hidden>
+                    <p class="texto__parrafo" id="info__juego"></p>
+                    <input type="number" id="valorUsuario" min="1" max="10" class="container__input">
+                    <div class="chute container__botones">
+                        <button onclick="verificarIntento();" class="container__boton" id="jugar">Intentar</button>
+                        <button onclick="reiniciarJuego();" class="container__boton" id="reiniciar" disabled>Nuevo juego</button>
+                    </div>
                 </div>
             </div>
             <img src="./img/ia.png" alt="Una persona mirando a la izquierda" class="container__imagen-persona" />
